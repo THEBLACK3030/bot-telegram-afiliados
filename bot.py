@@ -12,7 +12,7 @@ PUBLIC_GROUP_USERNAME = '@blacktechdealsgroup'
 
 # Comando /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('¡Hola! Soy tu bot 🤖')
+    await update.message.reply_text('¡Hola! Soy el bot 🤖')
 
 # Bienvenida personalizada con botones
 async def welcome(update: Update, context: ContextTypes.DEFAULT_TYPE):
