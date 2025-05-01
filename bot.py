@@ -1,11 +1,21 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, ChatMemberHandler, filters
+from dotenv import load_dotenv
 import nest_asyncio
 import asyncio
+import os
 
+# Aplicar compatibilidad con entornos async
 nest_asyncio.apply()
 
-TOKEN = '7722269139:AAG4yryGIrygmh8vY-ByXlL_TaypE9tRxL0'
+# Cargar el token desde .env
+load_dotenv()
+TOKEN = os.getenv("TELEGRAM_TOKEN")
+
+if not TOKEN:
+    raise ValueError("Token no encontrado. ¿Olvidaste crear el archivo .env?")
+
+# Variables de grupo y canal
 PRIVATE_GROUP_USERNAME = '@teachdealsscrapelinks'
 CHANNEL_USERNAME = '@blacktechdeals'
 PUBLIC_GROUP_USERNAME = '@blacktechdealsgroup'
@@ -46,6 +56,7 @@ async def forward_and_delete(update: Update, context: ContextTypes.DEFAULT_TYPE)
             message_id=update.message.message_id
         )
 
+# Función principal
 async def main():
     print("Bot iniciado 🚀")
 
@@ -57,5 +68,5 @@ async def main():
 
     await app.run_polling()
 
-if name == '__main__':
+if __name__ == '__main__':
     asyncio.run(main())
