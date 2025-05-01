@@ -5,7 +5,7 @@ import asyncio
 
 nest_asyncio.apply()
 
-TOKEN = '7722269139:AAH_Uhmd3qE_rvr5HZP0cqyX_qKZK8suwwc'
+TOKEN = '7722269139:AAG4yryGIrygmh8vY-ByXlL_TaypE9tRxL0'
 PRIVATE_GROUP_USERNAME = '@teachdealsscrapelinks'
 CHANNEL_USERNAME = '@blacktechdeals'
 PUBLIC_GROUP_USERNAME = '@blacktechdealsgroup'
